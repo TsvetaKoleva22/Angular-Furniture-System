@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Welcome to the Furniture System</h1>
+      <p class="subtitle-par">Select furniture from the catalog to view details.</p>
+    </div>
+  </div>
+  <div class="row space-top">
+    <div class="col-md-4 allfurn" *ngFor="let furn of furnArr">
+      <div class="card text-white bg-primary">
+        <div class="card-body">
+          <blockquote class="card-blockquote">
+            <img src="{{furn.image}}" alt="{{furn.make}}" />
+            <p>{{furn.description | shorten}}</p>
+            <footer>{{furn.make}}
+              <cite title="Source Title">{{furn.model}}</cite>
+            </footer>
+            <div class="pull-right">
+              <a routerLink="/furniture/details/{{furn._id}}" class="btn btn-info">Details</a>
+            </div>
+            <div *ngIf="isAdmin" class="pull-left">
+              <a routerLink="/furniture/edit/{{furn._id}}" class="btn btn-warning">Edit</a>
+              <a (click)="deleteFunc(furn._id)" class="btn btn-danger">Delete</a>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

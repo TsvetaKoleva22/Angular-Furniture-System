@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    /* margin: 0;
+    padding: 0; */
+    background: url("./assets/images/furn2.jpg") no-repeat center center fixed;
+    background-size: cover; 
+}
+a{
+    margin-left: 10px;
+    border-radius: 5px;
+}
+#footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: rgb(87, 102, 62);
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}

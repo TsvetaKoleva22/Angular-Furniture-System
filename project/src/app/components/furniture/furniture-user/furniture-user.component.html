@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Profile Page</h1>
+      <p class="subtitle-par">Listing your furniture.</p>
+    </div>
+  </div>
+  <div *ngIf="myFurnArr">
+    <div *ngIf="myFurnArr.length === 0">
+      <div class="row space-top">
+        <div class="col-md-12">
+          <h1>You have no furniture yet!</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row space-top">
+      <div class="col-md-4 allfurn" *ngFor="let mf of myFurnArr">
+        <div class="card text-white bg-primary">
+          <div class="card-body">
+            <blockquote class="card-blockquote">
+              <img src="{{mf.image}}" alt="{{mf.make}}" />
+              <p>{{mf.description}}</p>
+              <footer>{{mf.make}}
+                <cite title="Source Title">{{mf.model}}</cite>
+              </footer>
+              <div class="pull-right">
+                <a routerLink="/furniture/details/{{mf._id}}" class="btn btn-info">Details</a>
+                <a (click)="deleteFunc(mf._id)" class="btn btn-danger">Delete Item</a>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
